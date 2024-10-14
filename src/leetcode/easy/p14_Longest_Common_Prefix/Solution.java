@@ -19,3 +19,12 @@ public class Solution {
 
     }
 }
+
+/*
+Main{
+        String[] testCase1 = new String[]{"flower", "flow", "flight"};
+        String[] testCase2 = new String[]{"dog", "racecar", "car"};
+        String answer = Solution.longestCommonPrefix(testCase1);
+        System.out.println(answer);
+}
+* */
