@@ -93,10 +93,3 @@ public class Solution {
 
 
 }
-
-
-/*
-Main{
-Solution.longestDiverseString(10, 1, 0);
-}
-* */

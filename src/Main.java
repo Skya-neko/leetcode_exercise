@@ -1,11 +1,11 @@
-import leetcode.medium.p1405_Longest_Happy_String.Solution;
+import leetcode.easy.p20_Valid_Parentheses.Solution;
 
 import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        Solution.longestDiverseString(10, 1, 0);
-
+        boolean isValid = Solution.isValid("{[][][()}");
+        System.out.println(isValid);
     }
 }
