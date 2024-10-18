@@ -32,3 +32,9 @@ public class Solution {
         return result;
     }
 }
+/*
+Main{
+int answer = Solution.reverse(2147483647);
+        System.out.println(answer);
+}
+* */
