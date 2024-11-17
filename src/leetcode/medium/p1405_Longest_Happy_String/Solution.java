@@ -15,7 +15,6 @@ public class Solution {
         List<Map.Entry<String, Integer>> orderedList = getOrderedList(map);
         String maxField = getMaxEntry(orderedList).getKey();
 
-
         System.out.println("maxField  " + maxField + " = " + map.get(maxField));
         StringBuilder sb = new StringBuilder();
         sb.append(maxField);
@@ -29,7 +28,6 @@ public class Solution {
             orderedList = getOrderedList(map);
             maxField = getMaxEntry(orderedList).getKey();
 
-
             if (sb.length() > 1) {
                 lastSecondChar = sb.substring(sb.length() - 2, sb.length() - 1);
                 if (lastChar.equals(lastSecondChar) && lastChar.equals(maxField)) {
@@ -42,7 +40,8 @@ public class Solution {
             showRemain(sb, orderedList);
 
             boolean endCondition2 = map.values().stream().mapToInt(k -> k).sum() == 0;
-            boolean endCondition3 = orderedList.get(1).getValue() == 0 && orderedList.get(2).getValue() == 0 && (lastChar.equals(lastSecondChar) && lastChar.equals(maxField));
+            boolean endCondition3 = orderedList.get(1).getValue() == 0 && orderedList.get(2).getValue() == 0
+                    && (lastChar.equals(lastSecondChar) && lastChar.equals(maxField));
             isEnd.value = isEnd.value || endCondition2 || endCondition3;
 
         }
@@ -50,8 +49,8 @@ public class Solution {
         return sb.toString();
     }
 
-
-    private static void addNewChar(String maxField, Map<String, Integer> map, StringBuilder sb, List<Map.Entry<String, Integer>> orderedList, BoolWrapper isEnd) {
+    private static void addNewChar(String maxField, Map<String, Integer> map, StringBuilder sb,
+            List<Map.Entry<String, Integer>> orderedList, BoolWrapper isEnd) {
         if (map.get(maxField) - 1 >= 0) {
             sb.append(maxField);
             map.replace(maxField, map.get(maxField) - 1);
@@ -70,7 +69,7 @@ public class Solution {
     }
 
     private static Map.Entry<String, Integer> getMaxEntry(List<Map.Entry<String, Integer>> list) {
-        return list.getFirst();
+        return list.get(0);
     }
 
     private static Map.Entry<String, Integer> getSecondEntry(List<Map.Entry<String, Integer>> list) {
@@ -85,18 +84,17 @@ public class Solution {
         list.sort(Map.Entry.<String, Integer>comparingByValue().reversed());
 
         // 打印排序後的結果，鍵和值都會顯示
-//        for (Map.Entry<String, Integer> entry : list) {
-//            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
-//        }
+        // for (Map.Entry<String, Integer> entry : list) {
+        // System.out.println("Key: " + entry.getKey() + ", Value: " +
+        // entry.getValue());
+        // }
         return list;
     }
 
-
 }
-
 
 /*
-Main{
-Solution.longestDiverseString(10, 1, 0);
-}
-* */
+ * Main{
+ * Solution.longestDiverseString(10, 1, 0);
+ * }
+ */

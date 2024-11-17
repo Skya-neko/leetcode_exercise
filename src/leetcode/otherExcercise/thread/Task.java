@@ -1,4 +1,4 @@
-package leetcode.thread;
+package leetcode.otherExcercise.thread;
 
 public class Task implements Runnable {
 
